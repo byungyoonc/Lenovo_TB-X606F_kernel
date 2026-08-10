@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -12,15 +12,16 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+
 class KpdData:
     _row = -1
     _col = -1
     _row_ext = -1
     _col_ext = -1
     _gpioNum = -1
-    _util = ''
-    _homeKey = ''
-    _keyType = ''
+    _util = ""
+    _homeKey = ""
+    _keyType = ""
     _pressTime = -1
     _dinHigh = False
     _matrix = []
@@ -29,7 +30,7 @@ class KpdData:
     _downloadKeys = []
     _keyValueMap = {}
     _usedKeys = []
-    _modeKeys = {'META':None, 'RECOVERY':None, 'FACTORY':None}
+    _modeKeys = {"META": None, "RECOVERY": None, "FACTORY": None}
 
     def __init__(self):
         self.__varNames = []
@@ -156,4 +157,3 @@ class KpdData:
             return KpdData._keyValueMap[key]
 
         return 0
-

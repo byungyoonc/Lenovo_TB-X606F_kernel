@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -43,5 +43,3 @@ def compare(value):
 
 def sorted_key(lst):
     return sorted(lst, key=compare)
-
-

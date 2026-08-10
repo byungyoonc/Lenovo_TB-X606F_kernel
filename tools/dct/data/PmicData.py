@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -12,10 +12,12 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+
 class PmicData:
     _var_list = []
+
     def __init__(self):
-        self.__ldoName = ''
+        self.__ldoName = ""
         self.__defEn = -1
         self.__nameList = []
 

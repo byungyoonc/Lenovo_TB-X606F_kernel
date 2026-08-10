@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -12,12 +12,13 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+
 class ClkData:
-    _varList = ['DISABLE', 'SW_CONTROL', 'HW_CONTROL']
+    _varList = ["DISABLE", "SW_CONTROL", "HW_CONTROL"]
     _count = 0
 
     def __init__(self):
-        self.__varName = ''
+        self.__varName = ""
 
     def set_defVarName(self, idx):
         self.__varName = self._varList[idx]
@@ -32,7 +33,7 @@ class ClkData:
 class OldClkData(ClkData):
     def __init__(self):
         ClkData.__init__(self)
-        self.__current = ''
+        self.__current = ""
         self.__curList = []
 
     def set_defCurrent(self, idx):

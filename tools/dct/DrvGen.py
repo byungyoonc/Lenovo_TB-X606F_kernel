@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -10,7 +10,7 @@
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-# See http://www.gnu.org/licenses/gpl-2.0.html for more details.	
+# See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
 import os, sys
 import getopt
@@ -184,4 +184,3 @@ if __name__ == '__main__':
         sys.exit(-1)
 
     sys.exit(0)
-

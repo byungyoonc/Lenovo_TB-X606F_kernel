@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -11,6 +11,7 @@
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
+
 
 class GpioData:
     _count = 0
@@ -25,11 +26,11 @@ class GpioData:
     def __init__(self):
         self.__defMode = 0
         self.__eintMode = False
-        self.__modeVec = ['0', '0', '0', '0', '0', '0', '0', '0']
+        self.__modeVec = ["0", "0", "0", "0", "0", "0", "0", "0"]
         self.__inPullEn = True
         self.__inPullSelHigh = False
         self.__defDirInt = 0
-        self.__defDir = 'IN'
+        self.__defDir = "IN"
         self.__inEn = True
         self.__outEn = False
         self.__outHigh = False
@@ -38,7 +39,6 @@ class GpioData:
         self.__smtEn = False
         self.__iesEn = True
         self.__drvCur = ""
-
 
     def get_defMode(self):
         return self.__defMode
@@ -125,7 +125,7 @@ class GpioData:
         return self.__smtNum
 
     def ge_defDirInt(self):
-        if self.__defDir == 'IN':
+        if self.__defDir == "IN":
             return 0
         else:
             return 1
@@ -139,4 +139,3 @@ class GpioData:
         if key in GpioData._modeMap.keys():
             value = GpioData._modeMap[key]
             return value[idx]
-
