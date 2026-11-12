@@ -65,7 +65,7 @@ import re
 import platform
 from datetime import datetime
 import struct
-import ConfigParser
+import configparser
 
 # ----------------- CLASSES --------------------
 
@@ -4510,7 +4510,7 @@ def checkArgBool(value):
 #	 Configure the script via the info in a config file
 def configFromFile(file):
 	global sysvals
-	Config = ConfigParser.ConfigParser()
+	Config = configparser.ConfigParser()
 
 	ignorekprobes = False
 	Config.read(file)
