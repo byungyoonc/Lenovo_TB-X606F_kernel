@@ -12,17 +12,18 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+from __future__ import absolute_import
 import re
 import string
 import xml.dom.minidom
 import ConfigParser
 
-from ModuleObj import ModuleObj
+from .ModuleObj import ModuleObj
 #from utility import util
 from utility.util import sorted_key
 from data.I2cData import I2cData
 from data.I2cData import BusData
-import ChipObj
+from . import ChipObj
 
 class I2cObj(ModuleObj):
     _busList = []

@@ -12,13 +12,14 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+from __future__ import absolute_import
 import re
 import string
 import ConfigParser
 
 import xml.dom.minidom
 
-from ModuleObj import ModuleObj
+from .ModuleObj import ModuleObj
 from data.ClkData import ClkData
 from data.ClkData import OldClkData
 from data.ClkData import NewClkData

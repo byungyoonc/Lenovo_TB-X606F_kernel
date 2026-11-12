@@ -12,18 +12,19 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+from __future__ import absolute_import
 import sys,os
 import re
 import string
 import ConfigParser
 import xml.dom.minidom
 
-import ChipObj
+from . import ChipObj
 from data.PowerData import PowerData
 from utility.util import log
 from utility.util import LogLevel
 from utility.util import sorted_key
-from ModuleObj import ModuleObj
+from .ModuleObj import ModuleObj
 
 class PowerObj(ModuleObj):
     def __init__(self):

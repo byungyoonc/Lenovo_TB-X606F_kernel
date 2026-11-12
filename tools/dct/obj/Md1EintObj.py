@@ -12,6 +12,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+from __future__ import absolute_import
 import ConfigParser
 import string
 import xml.dom.minidom
@@ -20,7 +21,7 @@ import re
 
 from utility import util
 from utility.util import sorted_key
-from ModuleObj import ModuleObj
+from .ModuleObj import ModuleObj
 from data.Md1EintData import Md1EintData
 from utility.util import LogLevel
 

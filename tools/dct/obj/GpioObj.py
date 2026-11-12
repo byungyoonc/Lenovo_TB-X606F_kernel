@@ -12,6 +12,7 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 # See http://www.gnu.org/licenses/gpl-2.0.html for more details.
 
+from __future__ import absolute_import
 import re
 import os
 import sys
@@ -22,8 +23,8 @@ import xml.dom.minidom
 
 from data.GpioData import GpioData
 from data.EintData import EintData
-from ModuleObj import ModuleObj
-import ChipObj
+from .ModuleObj import ModuleObj
+from . import ChipObj
 from utility.util import compare
 from utility.util import sorted_key
 from utility.util import log
