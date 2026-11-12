@@ -24,6 +24,8 @@ struct compat_timespec;
 #define current_thread_info() ((struct thread_info *)current)
 #endif
 
+#include <linux/restart_block.h>
+
 #include <linux/bitops.h>
 #include <asm/thread_info.h>
 
