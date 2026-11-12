@@ -69,7 +69,7 @@ class KpdObj(ModuleObj):
                             matrix.append(item)
                     KpdData.set_matrix(matrix)
                     for item in matrix:
-                        if cmp(item, "NC") != 0:
+                        if item != "NC":
                             KpdData._usedKeys.append(item)
                     KpdData._usedKeys.append("POWER")
 
@@ -173,7 +173,7 @@ class KpdObj(ModuleObj):
             gen_str += """#define KPD_PMIC_RSTKEY_MAP\tKEY_%s\n""" % (
                 KpdData.get_homeKey()
             )
-        if cmp(KpdData.get_keyType(), "EXTEND_TYPE") != 0:
+        if KpdData.get_keyType() != "EXTEND_TYPE":
             gen_str += """#define MTK_PMIC_PWR_KEY\t%d\n""" % (KpdData.get_col() - 1)
             if KpdData.get_homeKey() != "":
                 gen_str += """#define MTK_PMIC_RST_KEY\t\t%d\n""" % (
@@ -198,14 +198,14 @@ class KpdObj(ModuleObj):
 
         if KpdData.get_keyType() == "NORMAL_TYPE":
             for key in KpdData.get_matrix():
-                if cmp(key, "NC") != 0:
+                if key != "NC":
                     gen_str += """\t[%d] = KEY_%s,\t\\\n""" % (
                         KpdData.get_matrix().index(key),
                         key,
                     )
         else:
             for key in KpdData.get_matrix_ext():
-                if cmp(key, "NC") != 0:
+                if key != "NC":
                     gen_str += """\t[%d] = KEY_%s,\t\\\n""" % (
                         KpdData.get_matrix_ext().index(key),
                         key,
@@ -226,7 +226,7 @@ class KpdObj(ModuleObj):
         gen_str += """\n"""
 
         for key in KpdData.get_downloadKeys():
-            if cmp(key, "NC") != 0:
+            if key != "NC":
                 dlIdx = KpdData.get_downloadKeys().index(key)
                 mtxIdx = self.get_matrixIdx(key)
                 gen_str += """#define KPD_DL_KEY%d\t%d\t/* KEY_%s */\n""" % (
@@ -241,7 +241,7 @@ class KpdObj(ModuleObj):
         gen_str += """/***********************************************************/\n"""
 
         for key, value in KpdData.get_modeKeys().items():
-            if cmp(value, "NC") != 0:
+            if value != "NC":
                 idx = self.get_matrixIdx(value)
                 # idx = KpdData.get_matrix().index(value)
                 gen_str += """#define MT65XX_%s_KEY\t%d\t/* KEY_%s */\n""" % (
@@ -258,14 +258,14 @@ class KpdObj(ModuleObj):
         if KpdData.get_keyType() == "NORMAL_TYPE":
             if value == "POWER":
                 return KpdData.get_col() - 1
-            elif cmp(value, KpdData.get_homeKey()) == 0:
+            elif value == KpdData.get_homeKey():
                 return 2 * KpdData.get_col() - 1
             else:
                 return KpdData.get_matrix().index(value)
         elif KpdData.get_keyType() == "EXTEND_TYPE":
             if value == "POWER":
                 return KpdData.get_col_ext() - 1
-            elif cmp(value, KpdData.get_homeKey()) == 0:
+            elif value == KpdData.get_homeKey():
                 return 2 * KpdData.get_col_ext() - 1
             else:
                 return KpdData.get_matrix_ext().index(value)

@@ -157,7 +157,7 @@ class I2cObj(ModuleObj):
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
                     value.get_channel() == channel
-                    and cmp(value.get_varName(), "NC") != 0
+                    and value.get_varName() != "NC"
                     and value.get_address().strip() != ""
                 ):
                     gen_str += """\t%s@%s {\n""" % (
@@ -215,7 +215,7 @@ class I2cObj_MT6759(I2cObj):
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
                     value.get_channel() == channel
-                    and cmp(value.get_varName(), "NC") != 0
+                    and value.get_varName() != "NC"
                     and value.get_address().strip() != ""
                 ):
                     gen_str += """\t%s_mtk:%s@%s {\n""" % (
@@ -265,7 +265,7 @@ class I2cObj_MT6775(I2cObj):
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
                     value.get_channel() == channel
-                    and cmp(value.get_varName(), "NC") != 0
+                    and value.get_varName() != "NC"
                     and value.get_address().strip() != ""
                 ):
                     gen_str += """\t%s_mtk:%s@%s {\n""" % (
