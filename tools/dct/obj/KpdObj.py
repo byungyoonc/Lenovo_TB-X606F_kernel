@@ -256,14 +256,14 @@ class KpdObj(ModuleObj):
 
     def get_matrixIdx(self, value):
         if KpdData.get_keyType() == "NORMAL_TYPE":
-            if cmp(value, "POWER") == 0:
+            if value == "POWER":
                 return KpdData.get_col() - 1
             elif cmp(value, KpdData.get_homeKey()) == 0:
                 return 2 * KpdData.get_col() - 1
             else:
                 return KpdData.get_matrix().index(value)
         elif KpdData.get_keyType() == "EXTEND_TYPE":
-            if cmp(value, "POWER") == 0:
+            if value == "POWER":
                 return KpdData.get_col_ext() - 1
             elif cmp(value, KpdData.get_homeKey()) == 0:
                 return 2 * KpdData.get_col_ext() - 1
@@ -333,7 +333,7 @@ class KpdObj(ModuleObj):
             int(KpdData.get_gpioDinHigh())
         )
         for key in KpdData.get_downloadKeys():
-            if cmp(key, "NC") == 0:
+            if key == "NC":
                 continue
             gen_str += """\tmediatek,kpd-hw-dl-key%d = <%s>;\n""" % (
                 KpdData.get_downloadKeys().index(key),
@@ -341,7 +341,7 @@ class KpdObj(ModuleObj):
             )
 
         for key, value in KpdData.get_modeKeys().items():
-            if cmp(value, "NC") == 0:
+            if value == "NC":
                 continue
             gen_str += """\tmediatek,kpd-hw-%s-key = <%d>;\n""" % (
                 key.lower(),

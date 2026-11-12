@@ -83,7 +83,7 @@ class GpioObj(ModuleObj):
         nodes = node.childNodes
         for node in nodes:
             if node.nodeType == xml.dom.Node.ELEMENT_NODE:
-                if cmp(node.nodeName, "count") == 0:
+                if node.nodeName == "count":
                     GpioData._count = string.atoi(node.childNodes[0].nodeValue)
                     continue
 
@@ -110,7 +110,7 @@ class GpioObj(ModuleObj):
 
                 if len(eintNode):
                     flag = False
-                    if cmp(eintNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if eintNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_eintMode(flag)
 
@@ -126,13 +126,13 @@ class GpioObj(ModuleObj):
 
                 if len(inpeNode):
                     flag = False
-                    if cmp(inpeNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if inpeNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_inpullEn(flag)
 
                 if len(inpsNode):
                     flag = False
-                    if cmp(inpsNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if inpsNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_inpullSelHigh(flag)
 
@@ -141,19 +141,19 @@ class GpioObj(ModuleObj):
 
                 if len(diriNode) != 0 and len(diriNode[0].childNodes) != 0:
                     flag = False
-                    if cmp(diriNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if diriNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_inEn(flag)
 
                 if len(diroNode) != 0 and len(diroNode[0].childNodes) != 0:
                     flag = False
-                    if cmp(diroNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if diroNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_outEn(flag)
 
                 if len(outhNode):
                     flag = False
-                    if cmp(outhNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if outhNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_outHigh(flag)
 
@@ -169,13 +169,13 @@ class GpioObj(ModuleObj):
 
                 if len(smtNode):
                     flag = False
-                    if cmp(smtNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if smtNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_smtEn(flag)
 
                 if len(iesNode):
                     flag = False
-                    if cmp(iesNode[0].childNodes[0].nodeValue, "true") == 0:
+                    if iesNode[0].childNodes[0].nodeValue == "true":
                         flag = True
                     data.set_iesEn(flag)
 
@@ -431,7 +431,7 @@ class GpioObj(ModuleObj):
                                     mode_name = mode_name.split("//")[1]
 
                             if pat.match(mode_name):
-                                if cmp(item, "eint") == 0 and (
+                                if item == "eint" and (
                                     value.get_eintMode()
                                     or mode_name.find("MD_EINT") != -1
                                 ):
@@ -488,7 +488,7 @@ class GpioObj(ModuleObj):
                         regExp = "[_A-Z0-9:]*%s[_A-Z0-9:]*" % (item.upper())
                         pat = re.compile(regExp)
                         if pat.match(mode_name):
-                            if cmp(item, "eint") == 0 and (
+                            if item == "eint" and (
                                 value.get_eintMode() or mode_name.find("MD_EINT") != -1
                             ):
                                 continue

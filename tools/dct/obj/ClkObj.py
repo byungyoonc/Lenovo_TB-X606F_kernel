@@ -126,7 +126,7 @@ class ClkObj(ModuleObj):
         for key in sorted_key(ModuleObj.get_data(self).keys()):
             value = ModuleObj.get_data(self)[key]
             idx = value.get_curList().index(value.get_current())
-            if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+            if value.get_curList()[0] == DEFAULT_AUTOK:
                 idx -= 1
 
             if idx >= 0:
@@ -167,7 +167,7 @@ class ClkObj(ModuleObj):
                 continue
             value = ModuleObj.get_data(self)[key]
             idx = value.get_curList().index(value.get_current())
-            if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+            if value.get_curList()[0] == DEFAULT_AUTOK:
                 idx -= 1
             if idx < 0:
                 gen_str += """(%d) """ % (-1)
@@ -284,7 +284,7 @@ class ClkObj_Everest(ClkObj):
             value = ModuleObj.get_data(self)[key]
             if key.find(self.__rf) != -1:
                 idx = value.get_curList().index(value.get_current())
-                if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+                if value.get_curList()[0] == DEFAULT_AUTOK:
                     idx -= 1
                 gen_str += """%d """ % (idx)
 
@@ -352,7 +352,7 @@ class ClkObj_Olympus(ClkObj_Everest):
                 continue
             value = ModuleObj.get_data(self)[key]
             idx = value.get_curList().index(value.get_current())
-            if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+            if value.get_curList()[0] == DEFAULT_AUTOK:
                 idx -= 1
 
             if idx >= 0:
@@ -373,7 +373,7 @@ class ClkObj_Olympus(ClkObj_Everest):
                 continue
             value = ModuleObj.get_data(self)[key]
             idx = value.get_curList().index(value.get_current())
-            if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+            if value.get_curList()[0] == DEFAULT_AUTOK:
                 idx -= 1
 
             if idx >= 0:
@@ -464,7 +464,7 @@ class ClkObj_Rushmore(ClkObj):
                 continue
             value = ModuleObj.get_data(self)[key]
             idx = value.get_curList().index(value.get_current())
-            if cmp(value.get_curList()[0], DEFAULT_AUTOK) == 0:
+            if value.get_curList()[0] == DEFAULT_AUTOK:
                 idx -= 1
 
             if idx >= 0:

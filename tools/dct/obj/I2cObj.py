@@ -58,7 +58,7 @@ class I2cObj(ModuleObj):
         nodes = node.childNodes
         for node in nodes:
             if node.nodeType == xml.dom.minidom.Node.ELEMENT_NODE:
-                if cmp(node.nodeName, "count") == 0:
+                if node.nodeName == "count":
                     self.__count = node.childNodes[0].nodeValue
                     continue
                 if node.nodeName.find("bus") != -1:
@@ -146,9 +146,9 @@ class I2cObj(ModuleObj):
                 )
                 temp_str = ""
 
-                if cmp(self._busList[i].get_enable(), "false") == 0:
+                if self._busList[i].get_enable() == "false":
                     temp_str = "use-open-drain"
-                elif cmp(self._busList[i].get_enable(), "true") == 0:
+                elif self._busList[i].get_enable() == "true":
                     temp_str = "use-push-pull"
                 gen_str += """\tmediatek,%s;\n""" % (temp_str)
 
@@ -156,7 +156,7 @@ class I2cObj(ModuleObj):
                 value = ModuleObj.get_data(self)[key]
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
-                    cmp(value.get_channel(), channel) == 0
+                    value.get_channel() == channel
                     and cmp(value.get_varName(), "NC") != 0
                     and value.get_address().strip() != ""
                 ):
@@ -204,9 +204,9 @@ class I2cObj_MT6759(I2cObj):
                 )
                 temp_str = ""
 
-                if cmp(self._busList[i].get_enable(), "false") == 0:
+                if self._busList[i].get_enable() == "false":
                     temp_str = "use-open-drain"
-                elif cmp(self._busList[i].get_enable(), "true") == 0:
+                elif self._busList[i].get_enable() == "true":
                     temp_str = "use-push-pull"
                 gen_str += """\tmediatek,%s;\n""" % (temp_str)
 
@@ -214,7 +214,7 @@ class I2cObj_MT6759(I2cObj):
                 value = ModuleObj.get_data(self)[key]
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
-                    cmp(value.get_channel(), channel) == 0
+                    value.get_channel() == channel
                     and cmp(value.get_varName(), "NC") != 0
                     and value.get_address().strip() != ""
                 ):
@@ -254,9 +254,9 @@ class I2cObj_MT6775(I2cObj):
                 )
                 temp_str = ""
 
-                if cmp(self._busList[i].get_enable(), "false") == 0:
+                if self._busList[i].get_enable() == "false":
                     temp_str = "use-open-drain"
-                elif cmp(self._busList[i].get_enable(), "true") == 0:
+                elif self._busList[i].get_enable() == "true":
                     temp_str = "use-push-pull"
                 gen_str += """\tmediatek,%s;\n""" % (temp_str)
 
@@ -264,7 +264,7 @@ class I2cObj_MT6775(I2cObj):
                 value = ModuleObj.get_data(self)[key]
                 channel = "I2C_CHANNEL_%d" % (i)
                 if (
-                    cmp(value.get_channel(), channel) == 0
+                    value.get_channel() == channel
                     and cmp(value.get_varName(), "NC") != 0
                     and value.get_address().strip() != ""
                 ):
