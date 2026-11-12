@@ -1,4 +1,4 @@
-#! /usr/bin/python2
+#! /usr/bin/python
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2016 MediaTek Inc.
@@ -14,16 +14,15 @@
 
 from data.EintData import EintData
 
-
 class Md1EintData(EintData):
     def __init__(self):
         EintData.__init__(self)
         self.__dedicatedEn = False
-        self.__srcPin = ""
-        self.__socetType = ""
+        self.__srcPin = ''
+        self.__socetType = ''
 
     def set_dedicatedEn(self, value):
-        if value == "Disable":
+        if value == 'Disable':
             self.__dedicatedEn = False
         else:
             self.__dedicatedEn = True
