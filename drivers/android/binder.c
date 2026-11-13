@@ -44,6 +44,7 @@
 #endif
 
 #include <uapi/linux/android/binder.h>
+#include "binder_alloc.h"
 #include "binder_trace.h"
 
 static DEFINE_MUTEX(binder_main_lock);
