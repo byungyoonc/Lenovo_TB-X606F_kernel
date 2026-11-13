@@ -1345,6 +1345,11 @@ struct ext4_super_block {
 /* Number of quota types we support */
 #define EXT4_MAXQUOTAS 3
 
+#ifdef CONFIG_EXT4_FS_ENCRYPTION
+#define EXT4_KEY_DESC_PREFIX "ext4:"
+#define EXT4_KEY_DESC_PREFIX_SIZE 5
+#endif
+
 /*
  * fourth extended-fs super-block data in memory
  */
